@@ -21,7 +21,6 @@
 ```bash
 .
 ├── axi_lite_bus/     # AXI-Lite 总线接口模块
-├── board_test/       # 上板测试工程（需要绑定管脚）
 ├── cpu_core/         # MIPS CPU 核心（AXI-Lite 接口，支持80+指令）
 ├── docs/             # 技术文档与调试记录
 ├── peripherals/      # GPIO 等外设模块
@@ -44,7 +43,7 @@
 sudo apt install gcc-mips-linux-gnu
 ```
 
-参考资料详见：`Reference/toolchain.md`
+
 
 ---
 
@@ -52,7 +51,7 @@ sudo apt install gcc-mips-linux-gnu
 
 - 使用 Vivado 2020.2+ 版本开发
 - 安装完成后，配置系统 PATH 环境变量
-- 打开 Vivado → 导入 `board_test/` 工程 → 设置顶层模块为 `soc_top`
+- 打开 Vivado → 导入工程 → 设置顶层模块为 `soc_top`
 
 ---
 
@@ -61,7 +60,6 @@ sudo apt install gcc-mips-linux-gnu
 #### 编译 CPU 程序
 1. 在 `software/` 编写 MIPS 汇编或 C 程序
 2. 使用 `mips_gcc` 交叉编译生成 `.bin`
-3. 通过串口 / JTAG 烧录到板上（具体平台方式不同）
 
 #### 下载 bitstream 至 FPGA
 
